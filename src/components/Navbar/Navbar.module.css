@@ -1,12 +1,12 @@
-.nav { 
-    grid-area: n; 
-    background-color: steelblue; 
-    }
+.nav {
+    grid-area: n;
+    background-color: steelblue;
+}
 
 .item {
     color: white;
 }
 
 .item.active {
-    color:cadetblue ;
+    color: cadetblue;
 }
