@@ -1,7 +1,7 @@
 import s from './Navbar.module.css';
 import {NavLink} from "react-router-dom";
 
-//{`{${s.item} ${s.active}}`}
+//{`${s.item} ${s.active}`}  __for Messages
 
 const Navbar = () => {
     return (
@@ -10,7 +10,7 @@ const Navbar = () => {
                 <NavLink to='./profile' activeClassName={s.activeLink}>Profile</NavLink>
             </div>
             <div className={s.item}>
-                <NavLink to='./dialogs' activeClassName={s.activeLink}>Messages</NavLink>
+                <NavLink to='./dialogues' activeClassName={s.activeLink}>Messages</NavLink>
             </div>
             <div className={s.item}>
                 <NavLink to='./news' activeClassName={s.activeLink}>News</NavLink>
