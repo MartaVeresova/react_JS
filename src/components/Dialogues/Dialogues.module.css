@@ -2,24 +2,3 @@
     display: grid;
     grid-template-columns: 2fr 10fr;
 }
-
-.dialogItems {
-    padding: 20px;
-}
-
-.dialogItems .active {
-    color: crimson;
-}
-
-.dialog {
-    margin: 10px;
-}
-
-.messages {
-    padding: 20px;
-}
-
-.message {
-    margin: 10px;
-}
-

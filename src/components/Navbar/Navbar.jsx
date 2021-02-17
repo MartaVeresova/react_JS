@@ -1,26 +1,28 @@
 import s from './Navbar.module.css';
-import {NavLink} from "react-router-dom";
+import NavbarName from "./NavbarName/NavbarName";
 
 //{`${s.item} ${s.active}`}  __for Messages
-
-const NavbarMenu = (props) => {
-    return (
-        <div className={s.item}>
-            <NavLink to={props.path} activeClassName={s.activeLink}>{props.name}</NavLink>
-        </div>
-    )
-}
 
 const Navbar = () => {
     return (
         <nav className={s.nav}>
-            <NavbarMenu path='/profile' name='Profile'/>
-            <NavbarMenu path='/dialogues' name='Messages'/>
-            <NavbarMenu path='/news' name='News'/>
-            <NavbarMenu path='/music' name='Music'/>
-            <NavbarMenu path='/settings' name='Settings'/>
+            <div>
+                <NavbarName path='/profile' name='Profile'/>
+                <NavbarName path='/dialogues' name='Messages'/>
+                <NavbarName path='/news' name='News'/>
+                <NavbarName path='/music' name='Music'/>
+            </div>
+            <div className={s.settings}>
+                <NavbarName path='/settings' name='Settings'/>
+            </div>
+        </nav>
+    )
+}
 
-            {/*<div className={s.item}>
+export default Navbar;
+
+
+{/*<div className={s.item}>
                 <NavLink to='/profile' activeClassName={s.activeLink}>Profile</NavLink>
             </div>
             <div className={s.item}>
@@ -34,9 +36,5 @@ const Navbar = () => {
             </div>
             <div className={s.item}>
                 <NavLink to='/settings' activeClassName={s.activeLink}>Settings</NavLink>
-            </div>*/}
-        </nav>
-    )
+            </div>*/
 }
-
-export default Navbar;
