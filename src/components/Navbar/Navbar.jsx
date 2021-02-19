@@ -1,3 +1,4 @@
+import React from 'react';
 import s from './Navbar.module.css';
 import NavbarName from "./NavbarName/NavbarName";
 

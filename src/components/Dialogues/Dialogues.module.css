@@ -2,3 +2,13 @@
     display: grid;
     grid-template-columns: 2fr 10fr;
 }
+
+.buttonBlock {
+    margin-top: 10px;
+}
+
+.textareaBlock {
+    margin-top: 10px;
+    width: 200px;
+    height: 50px;
+}
