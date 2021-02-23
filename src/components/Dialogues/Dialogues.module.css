@@ -2,6 +2,17 @@
     display: grid;
     grid-template-columns: 2fr 10fr;
 }
+.dialogItems {
+    padding: 20px;
+}
+
+.dialogItems .active {
+    color: crimson;
+}
+
+.messages {
+    padding: 20px;
+}
 
 .buttonBlock {
     margin-top: 10px;
