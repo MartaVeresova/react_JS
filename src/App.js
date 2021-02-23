@@ -10,14 +10,19 @@ import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 
 
+
 const App = (props) => {
     return (
         <div className='app-wrapper'>
             <Header/>
             <Navbar/>
             <div className='app-wrapper-content'>
-                <Route exact path='/dialogues' render={() => <Dialogues state={props.state.dialoguesPage}/>}/>
-                <Route exact path='/profile' render={() => <Profile state={props.state.profilePage}/>}/>
+                <Route exact path='/dialogues' render={() => <Dialogues
+                    state={props.state.dialoguesPage}
+                    addMessage={props.addMessage}/>}/>
+                <Route exact path='/profile' render={() => <Profile
+                    state={props.state.profilePage}
+                    addPost={props.addPost}/>}/>
                 <Route exact path='/news' render={() => <News/>}/>
                 <Route exact path='/music' render={() => <Music/>}/>
                 <Route exact path='/settings' render={() => <Settings/>}/>
