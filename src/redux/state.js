@@ -25,26 +25,17 @@ let store = {
         },
         sidebar: {}
     },
-    getState() {
-        return this._state
-    },
     _callSubscribe() {
         console.log('State changed')
     },
-    addPost() {
-        let newPost = {
-            id: 3,
-            message: this._state.profilePage.newPostText,
-            likesCount: '2'
-        }
-        this._state.profilePage.posts.push(newPost)
-        this._state.profilePage.newPostText = ''
-        this._callSubscribe(this._state)
+
+    getState() {
+        return this._state
     },
-    updateNewPostText(newText) {
-        this._state.profilePage.newPostText = newText
-        this._callSubscribe(this._state)
+    subscribe(observer) {
+        this._callSubscribe = observer
     },
+
     addMessage() {
         let newPost = {
             id: 4, message: this._state.dialoguesPage.newMessageText
@@ -57,9 +48,31 @@ let store = {
         this._state.dialoguesPage.newMessageText = newText
         this._callSubscribe(this._state)
     },
-    subscribe(observer) {
-        this._callSubscribe = observer
-    },
+    dispatch(action) {
+        if (action.type === 'ADD-POST') {
+            let newPost = {
+                id: 3,
+                message: this._state.profilePage.newPostText,
+                likesCount: '2'
+            }
+            this._state.profilePage.posts.push(newPost)
+            this._state.profilePage.newPostText = ''
+            this._callSubscribe(this._state)
+        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+            this._state.profilePage.newPostText = action.newText
+            this._callSubscribe(this._state)
+        } else if (action.type === 'ADD-MESSAGE') {
+            let newPost = {
+                id: 4, message: this._state.dialoguesPage.newMessageText
+            }
+            this._state.dialoguesPage.messages.push(newPost)
+            this._state.dialoguesPage.newMessageText = ''
+            this._callSubscribe(this._state)
+        } else if (action.type === 'UPDATE-NEW-MESSAGE-TEXT') {
+            this._state.dialoguesPage.newMessageText = action.newText
+            this._callSubscribe(this._state)
+        }
+    }
 }
 
 
